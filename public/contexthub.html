@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PLEOS Context Hub — Jae Kim</title>
+  <meta name="description" content="Context Hub: a proactive AI layer concept for Hyundai's PLEOS connect platform, designed for Hyundai Global Tech Talent 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;900&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #141412; --ink: #F5F0EB; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: 'Archivo', sans-serif; height: 100%; }
+    ::selection { background: var(--ink); color: var(--bg); }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 22px 48px; border-bottom: 2px solid var(--ink); }
+    header a { font-size: 13px; font-weight: 900; letter-spacing: 0.26em; color: var(--ink); text-decoration: none; }
+    header span { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.24em; opacity: 0.75; }
+    main { height: calc(100vh - 69px); height: calc(100dvh - 69px); }
+    embed { width: 100%; height: 100%; }
+    .fallback { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 64px 48px; }
+    .fallback h1 { font-weight: 900; font-size: clamp(32px, 5vw, 64px); letter-spacing: -0.02em; text-transform: uppercase; margin: 0; }
+    .fallback p { font-weight: 500; font-size: 17px; line-height: 1.6; max-width: 560px; margin: 0; }
+    .fallback a { display: inline-flex; gap: 18px; border: 2px solid var(--ink); padding: 16px 22px; color: var(--ink); text-decoration: none; font-weight: 900; font-size: 16px; letter-spacing: 0.04em; transition: background 0.3s ease, color 0.3s ease; }
+    .fallback a:hover { background: var(--ink); color: var(--bg); }
+    @media (max-width: 900px) { header { padding: 16px 20px; } .fallback { padding: 48px 20px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/#projects">← JAE KIM</a>
+    <span>P.04 — PLEOS CONTEXT HUB</span>
+  </header>
+  <main>
+    <embed src="/contexthub.pdf" type="application/pdf">
+  </main>
+  <noscript></noscript>
+  <script>
+    // mobile browsers often refuse inline PDF embeds; offer an explicit open link instead
+    (function () {
+      var isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      var small = Math.min(window.innerWidth, window.innerHeight) < 700;
+      if (isTouch && small) {
+        var main = document.querySelector('main');
+        main.style.height = 'auto';
+        main.innerHTML =
+          '<div class="fallback">' +
+          '<h1>PLEOS Context Hub</h1>' +
+          '<p>Context Hub is a future mobility proactive AI layer concept for Hyundai\'s PLEOS connect platform, designed for Hyundai Global Tech Talent 2026.</p>' +
+          '<a href="/contexthub.pdf" target="_blank" rel="noopener">OPEN THE PDF <span>↗</span></a>' +
+          '</div>';
+      }
+    })();
+  </script>
+</body>
+</html>

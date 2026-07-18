@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OKX Algorithmic Trading — Jae Kim</title>
+  <meta name="description" content="Write-up of a solo algorithmic trading research operation on perpetual futures markets, built on a custom ETL trust layer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;900&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #141412; --ink: #F5F0EB; --inkrgb: 245, 240, 235; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: 'Archivo', sans-serif; }
+    ::selection { background: var(--ink); color: var(--bg); }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 22px 48px; border-bottom: 2px solid var(--ink); }
+    header a { font-size: 13px; font-weight: 900; letter-spacing: 0.26em; color: var(--ink); text-decoration: none; }
+    header span { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.24em; opacity: 0.75; }
+    main { max-width: 880px; margin: 0 auto; padding: 72px 48px 120px; }
+    h1 { font-weight: 900; font-size: clamp(40px, 6vw, 84px); line-height: 0.95; letter-spacing: -0.03em; text-transform: uppercase; margin: 0 0 16px; }
+    .meta { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.2em; opacity: 0.6; margin-bottom: 64px; }
+    h2 { display: flex; align-items: baseline; gap: 18px; font-size: 14px; font-weight: 900; letter-spacing: 0.24em; text-transform: uppercase; border-top: 2px solid var(--ink); padding-top: 18px; margin: 56px 0 20px; }
+    h2 .n { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.28em; }
+    p { font-weight: 500; font-size: 17px; line-height: 1.7; margin: 0 0 18px; max-width: 46em; }
+    ul { margin: 0 0 18px; padding-left: 22px; }
+    li { font-weight: 500; font-size: 17px; line-height: 1.7; margin-bottom: 8px; }
+    .tags { font-family: 'Space Grotesk', sans-serif; font-size: 12px; letter-spacing: 0.16em; opacity: 0.65; margin-top: 72px; border-top: 1px solid rgba(var(--inkrgb), 0.25); padding-top: 18px; }
+    @media (max-width: 900px) { header { padding: 16px 20px; } main { padding: 48px 20px 80px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/#projects">← JAE KIM</a>
+    <span>P.03 — OKX ALGORITHMIC TRADING</span>
+  </header>
+  <main>
+    <h1>OKX Algorithmic Trading</h1>
+    <div class="meta">SOLO RESEARCH OPERATION · PERPETUAL FUTURES · NO PUBLIC REPO</div>
+
+    <h2><span class="n">01</span> Overview</h2>
+    <p>A solo algorithmic trading research operation on perpetual futures markets, built against the OKX API. The codebase stays private; this page documents the system and the process behind it.</p>
+    <p>The operation placed in the top 100 of an OKX trading competition.</p>
+
+    <h2><span class="n">02</span> The trust layer</h2>
+    <p>Everything sits on a custom ETL pipeline treated as a trust layer: market data is ingested, validated, and reconciled before any strategy logic is allowed to consume it. If the data can't be trusted, nothing downstream can be.</p>
+
+    <h2><span class="n">03</span> Daily strategy validation</h2>
+    <p>Strategies are re-validated every day against fresh data rather than trusted on historical backtests alone. Signals that stop holding up are cut quickly.</p>
+
+    <h2><span class="n">04</span> Results &amp; lessons</h2>
+    <p>Top 100 finish in an OKX trading competition. More detail on performance, tooling, and lessons learned to come.</p>
+
+    <div class="tags">PYTHON · TRADING SYSTEMS · ETL · OKX API</div>
+  </main>
+</body>
+</html>
